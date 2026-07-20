@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+scripts/
+config/
+knowledge/
+dashboard/data.json
+dashboard/index.html
+日报模板.md
+README.md
+node_modules/
