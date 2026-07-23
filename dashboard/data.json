@@ -1,0 +1,103 @@
+{
+  "updated": "2026-07-23",
+  "week": "2026-W30",
+  "summary": "线下合计3单约5.1万（上海2单·昆明1单，退1单），游学报名2单×4980=¥9,960，知识库营业额1万。本月GMV约7.1万。游学直播54/100单，重心转移到游学转化。8-9月：作者共创、线下大会、线上公开课。11月小程序上线发售。",
+  "kpi": [
+    { "label": "💰 本月GMV", "value": "7.1万", "sub": "线下5.1万+游学1万+知识库1万", "change": "目标30万", "color": "warn" },
+    { "label": "🏙️ 线下活动", "value": "3单·5.1万", "sub": "上海2+昆明1(退1)", "change": "✅ 已结束", "color": "ok" },
+    { "label": "✈️ 游学直播", "value": "54/100单", "sub": "4场已播·目标30转化", "change": "🔥 冲刺中", "color": "warn" },
+    { "label": "🐻 知识库", "value": "1万·30咨询", "sub": "30人咨询进行中", "change": "进行中", "color": "info" },
+    { "label": "📝 8-9月项目", "value": "3个", "sub": "共创·大会·公开课", "change": "筹备中", "color": "info" },
+    { "label": "📱 小程序", "value": "11月上线", "sub": "构建中", "change": "11月发售", "color": "info" }
+  ],
+  "flywheel": [
+    { "name": "咨询金转化", "icon": "💎", "data": "目标30单", "status": "warn", "label": "冲刺中", "detail": "游学直播54单\n→转化掘金合伙人" },
+    { "name": "20人共创", "icon": "🤝", "data": "1万/人", "status": "info", "label": "8-9月启动", "detail": "送分销名额+50本书\n+奖状+大会致谢" },
+    { "name": "200人新书签售", "icon": "🎤", "data": "200人规模", "status": "info", "label": "8-9月启动", "detail": "线下签售大会\n→转化掘金合伙人" },
+    { "name": "39元新书发售", "icon": "📚", "data": "大会后上线", "status": "info", "label": "8-9月启动", "detail": "花39买书\n→转化掘金合伙人" },
+    { "name": "云南游学", "icon": "✈️", "data": "近期重点", "status": "priority", "label": "🔥 重点项目", "detail": "当前最重要项目\n54/100单冲刺中" },
+    { "name": "定金转化数据", "icon": "💰", "data": "约70个定金", "status": "info", "label": "转化追踪", "detail": "定金→成交转化\n待更新转化数据" }
+  ],
+  "timeline": [
+    { "date": "已完成", "name": "上海线下活动", "tag": "2单·3.4万", "desc": "成交掘金合伙人×2，客单价16,999", "owner": "醒醒/若醒", "status": "done" },
+    { "date": "已完成", "name": "昆明线下活动", "tag": "1单·1.7万(退1)", "desc": "成交1单掘金合伙人，1单退款", "owner": "醒醒", "status": "done" },
+    { "date": "已完成", "name": "游学报名", "tag": "2单×4980", "desc": "游学报名费收益，每单4,980元", "owner": "小竹", "status": "done" },
+    { "date": "进行中", "name": "游学直播转化", "tag": "54→100→30转化", "desc": "4场已出54单，目标100单转化30单(20%)", "owner": "小竹", "status": "priority" },
+    { "date": "进行中", "name": "小熊知识库咨询", "tag": "30咨询·1万", "desc": "营业额1万，30个咨询持续推进", "owner": "盼盼", "status": "info" },
+    { "date": "8-9月", "name": "20人作者共创项目", "tag": "1万/人", "desc": "共创宣传，送分销名额+50本书+奖状+大会致谢", "owner": "阿猫/鱼堂主", "status": "info" },
+    { "date": "8-9月", "name": "线下新书签售大会", "tag": "200人规模", "desc": "200人线下大会，目标转化掘金合伙人", "owner": "阿猫/鱼堂主", "status": "info" },
+    { "date": "8-9月", "name": "线上公开课", "tag": "39元买书→转化", "desc": "大会后开展，花39买书→转化掘金合伙人", "owner": "全员", "status": "info" },
+    { "date": "11月", "name": "小程序+线上学", "tag": "发售", "desc": "小程序构建完成，新线上学产品发售", "owner": "小杨", "status": "info" }
+  ],
+  "products": [
+    {
+      "name": "线下活动", "icon": "🏙️",
+      "metrics": [
+        { "name": "上海成交", "value": "2单·34,000", "status": "ok", "change": 2 },
+        { "name": "昆明成交", "value": "1单·17,000", "status": "ok", "change": 1 },
+        { "name": "退款", "value": "昆明-1单", "status": "danger", "change": -1 },
+        { "name": "合计", "value": "3单·50,997", "status": "ok", "change": 3 },
+        { "name": "客单价", "value": "16,999元", "status": "info", "change": 0 }
+      ],
+      "note": "上海2单(16,999×2=33,998)，昆明1单(16,999)，1单退款。线下合计3单约5.1万。"
+    },
+    {
+      "name": "游学项目", "icon": "✈️",
+      "metrics": [
+        { "name": "报名收益", "value": "2单×4,980=9,960", "status": "ok", "change": 2 },
+        { "name": "直播第1场", "value": "25单", "status": "ok", "change": 25 },
+        { "name": "直播第2场", "value": "15单", "status": "ok", "change": 15 },
+        { "name": "直播第3场", "value": "4单", "status": "warn", "change": 4 },
+        { "name": "直播第4场", "value": "10单", "status": "ok", "change": 10 },
+        { "name": "已出合计", "value": "54/100单(54%)", "status": "warn", "change": 54 },
+        { "name": "转化目标", "value": "30单(20%)", "status": "warn", "change": 0 }
+      ],
+      "note": "4场直播已出54单，剩余46单。目标100单中转化30单掘金合伙人(16,999)，即使20%也有20单。"
+    },
+    {
+      "name": "小熊知识库", "icon": "🐻",
+      "metrics": [
+        { "name": "营业额", "value": "10,000元", "status": "ok", "change": 10000 },
+        { "name": "咨询中", "value": "30人", "status": "info", "change": 30 }
+      ],
+      "note": "营业额保持1万元，30个咨询持续推进中。重心暂时转移到游学。"
+    },
+    {
+      "name": "本月GMV进度", "icon": "🎯",
+      "metrics": [
+        { "name": "月度目标", "value": "30万", "status": "info", "change": 0 },
+        { "name": "已完成", "value": "约7.1万(24%)", "status": "warn", "change": 70957 },
+        { "name": "剩余待补", "value": "约22.9万", "status": "danger", "change": 0 }
+      ],
+      "note": "线下5.1万+游学报名1万+知识库1万=7.1万。剩余22.9万需游学转化+8-9月新项目补齐。"
+    }
+  ],
+  "team": [
+    { "name": "阿猫", "roles": ["战略🧭", "8-9月项目📋"], "load": "🟡 高", "loadColor": "warn" },
+    { "name": "鱼堂主", "roles": ["战略🧭", "8-9月项目📋"], "load": "🟡 高", "loadColor": "warn" },
+    { "name": "醒醒/若醒", "roles": ["上海✅", "昆明✅", "线下复盘📝"], "load": "🟢 正常", "loadColor": "ok" },
+    { "name": "小竹", "roles": ["游学转化✈️🔴", "4场直播🎥"], "load": "🔴 重点", "loadColor": "danger" },
+    { "name": "盼盼", "roles": ["知识库咨询🐻", "跟进📋"], "load": "🟡 中", "loadColor": "warn" },
+    { "name": "小杨", "roles": ["小程序📱", "11月发售⏳"], "load": "🟡 高", "loadColor": "warn" },
+    { "name": "彤彤", "roles": ["新商学📚", "圆桌🎤"], "load": "🟡 中", "loadColor": "warn" },
+    { "name": "暖析", "roles": ["思考群📢", "读书会📖"], "load": "🟡 中", "loadColor": "warn" },
+    { "name": "长安", "roles": ["觉醒合伙人🤝"], "load": "🟡 中", "loadColor": "warn" },
+    { "name": "七青", "roles": ["公众号📝", "素材🎨"], "load": "🟢 正常", "loadColor": "ok" }
+  ],
+  "actions": [
+    { "priority": "p0", "text": "🔥 游学转化冲刺：54→100单，目标转化30单掘金合伙人(16,999)", "owner": "小竹" },
+    { "priority": "p0", "text": "💰 本月GMV缺口22.9万：需游学转化+8-9月新项目补量", "owner": "全员" },
+    { "priority": "p1", "text": "🐻 小熊知识��：30个咨询持续推进", "owner": "盼盼" },
+    { "priority": "p1", "text": "📝 8-9月：20人作者共创项目（1万/人）", "owner": "阿猫/鱼堂主" },
+    { "priority": "p1", "text": "🎤 8-9月：200人线下新书签售大会", "owner": "阿猫/鱼堂主" },
+    { "priority": "p2", "text": "📺 8-9月：线上公开课（39元买书→转化合伙人）", "owner": "全员" },
+    { "priority": "p2", "text": "📱 11月：小程序上线+线上学发售", "owner": "小杨" }
+  ],
+  "knowledge": [
+    { "priority": "p0", "text": "上海+昆明线下活动复盘（含退款处理SOP）", "owner": "醒醒/若醒" },
+    { "priority": "p0", "text": "游学直播各场数据复盘（出单漏斗分析）", "owner": "小竹" },
+    { "priority": "p1", "text": "线下活动执行SOP（含退款流程）", "owner": "醒醒" },
+    { "priority": "p1", "text": "知识库咨询转化流程SOP", "owner": "盼盼" },
+    { "priority": "p2", "text": "游学直播运营SOP", "owner": "小竹" }
+  ]
+}
