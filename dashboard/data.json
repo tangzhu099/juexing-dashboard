@@ -14,9 +14,9 @@
     { "name": "咨询金转化", "icon": "💎", "data": "目标30单", "status": "warn", "label": "冲刺中", "detail": "游学直播54单\n→转化掘金合伙人" },
     { "name": "20人共创", "icon": "🤝", "data": "1万/人", "status": "info", "label": "8-9月启动", "detail": "送分销名额+50本书\n+奖状+大会致谢" },
     { "name": "200人新书签售", "icon": "🎤", "data": "200人规模", "status": "info", "label": "8-9月启动", "detail": "线下签售大会\n→转化掘金合伙人" },
+    { "name": "追单数据", "icon": "💰", "data": "约70个定金", "status": "info", "label": "转化追踪", "detail": "游学直播定金池\n约70个待转化" },
     { "name": "39元新书发售", "icon": "📚", "data": "大会后上线", "status": "info", "label": "8-9月启动", "detail": "花39买书\n→转化掘金合伙人" },
-    { "name": "云南游学", "icon": "✈️", "data": "近期重点", "status": "priority", "label": "🔥 重点项目", "detail": "当前最重要项目\n54/100单冲刺中" },
-    { "name": "定金转化数据", "icon": "💰", "data": "约70个定金", "status": "info", "label": "转化追踪", "detail": "定金→成交转化\n待更新转化数据" }
+    { "name": "云南游学", "icon": "✈️", "data": "近期重点", "status": "priority", "label": "🔥 重点项目", "detail": "当前最重要项目\n54/100单冲刺中" }
   ],
   "timeline": [
     { "date": "已完成", "name": "上海线下活动", "tag": "2单·3.4万", "desc": "成交掘金合伙人×2，客单价16,999", "owner": "醒醒/若醒", "status": "done" },
