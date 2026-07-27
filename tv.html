@@ -93,63 +93,64 @@ body { padding-bottom: 74px; }
 .nav-item .nicon { font-size: 18px; }
 .footer { text-align: center; color: var(--dim); font-size: 11px; padding: 16px 0 8px; }
 
-/* ===== TV 大屏覆盖样式（优化版）===== */
-html, body { height: 100%; overflow: hidden; }
-body { padding-bottom: 0; }
-.header-gradient { padding: 1.6vh 2.5vw; border-radius: 0; }
-.header-gradient h1 { font-size: 2.8vh; }
-.header-gradient .date { font-size: 1.3vh; }
-.summary-card { padding: 1vh 2vh; font-size: 1.3vh; margin-top: 0.8vh; max-height: 6vh; overflow: hidden; }
-.section { padding: 0; }
-.section-title { font-size: 1.4vh; margin-bottom: 0.8vh; }
 
-/* 三行布局：上(40vh) 中(30vh) 下(剩余) */
-.tv-top { padding: 0 2.2vw; display: grid; grid-template-columns: 1fr 1.2fr 0.9fr; gap: 1.5vw; height: 39vh; overflow: hidden; }
-.tv-top > div { display: flex; flex-direction: column; min-height: 0; overflow: hidden; }
-.tv-mid { padding: 0 2.2vw; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5vw; height: 29vh; overflow: hidden; }
-.tv-mid > div { display: flex; flex-direction: column; min-height: 0; overflow: hidden; }
-.tv-bottom { padding: 0 2.2vw; display: grid; grid-template-columns: 1fr 1.5fr; gap: 1.5vw; flex: 1; min-height: 10vh; overflow: hidden; }
-.tv-bottom > div { display: flex; flex-direction: column; min-height: 0; overflow: hidden; }
+/* ===== TV 大屏横屏覆盖样式（仅在大屏横屏时生效）===== */
+@media (min-aspect-ratio: 16/10) and (min-width: 1024px), (min-aspect-ratio: 4/3) and (min-width: 1200px) {
+  html, body { height: 100%; overflow: hidden; padding-bottom: 0; }
+  .header-gradient { padding: 2vh 2.5vw 1.8vh; border-radius: 0; }
+  .header-gradient h1 { font-size: 2.8vh; }
+  .header-gradient .date { font-size: 1.4vh; }
+  .summary-card { padding: 1.2vh 2vh; font-size: 1.4vh; margin-top: 1vh; max-height: 7vh; overflow: hidden; }
 
-/* KPI 2列 */
-.kpi-scroll { overflow-x: visible; overflow-y: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 0.7vh; padding: 0; flex: 1; min-height: 0; }
-.kpi-card { flex: none; min-width: auto; padding: 1.1vh 0.8vh; border-radius: 1vh; }
-.kpi-card .label { font-size: 0.95vh; margin-bottom: 0.3vh; }
-.kpi-card .value { font-size: 2vh; }
-.kpi-card .sub { font-size: 0.85vh; }
-.kpi-card .change { font-size: 0.8vh; padding: 0.2vh 0.6vh; margin-top: 0.3vh; }
+  .section { padding: 0; }
+  .section-title { font-size: 1.5vh; margin-bottom: 1vh; }
 
-/* 飞轮 3列 */
-.fw-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.7vh; padding: 0; overflow-y: auto; flex: 1; min-height: 0; }
-.fw-card { padding: 1vh 0.7vh; border-radius: 1vh; }
-.fw-icon { width: 3.5vh; height: 3.5vh; font-size: 1.8vh; margin-bottom: 0.4vh; }
-.fw-name { font-size: 1.2vh; }
-.fw-data { font-size: 1.4vh; }
-.fw-label { font-size: 0.9vh; }
-.fw-detail { font-size: 0.8vh; margin-top: 0.3vh; }
+  .nav, .footer { display: none; }
 
-/* 所有滚动列表 */
-.product-list, .timeline-list, .team-list, .action-list { overflow-y: auto; flex: 1; min-height: 0; }
-.prod-card, .tl-card, .team-card, .act-card { margin: 0 0 0.5vh 0; padding: 0.8vh 1vh; border-radius: 0.8vh; }
-.prod-title { font-size: 1.1vh; margin-bottom: 0.3vh; }
-.prod-metric { font-size: 0.9vh; padding: 0.2vh 0; }
-.prod-progress { height: 0.35vh; margin-top: 0.3vh; }
-.tl-name { font-size: 1.1vh; }
-.tl-tag { font-size: 0.75vh; padding: 0.15vh 0.6vh; }
-.tl-body { font-size: 0.9vh; }
-.tl-bottom { font-size: 0.8vh; margin-top: 0.3vh; }
-.tl-card { padding: 0.8vh 1vh; }
-.tl-top { margin-bottom: 0.2vh; }
-.team-head { margin-bottom: 0.3vh; }
-.team-name { font-size: 1.1vh; }
-.team-load { font-size: 0.85vh; padding: 0.15vh 0.7vh; }
-.team-role { font-size: 0.75vh; padding: 0.15vh 0.6vh; }
-.act-prio { width: 1.4vh; height: 1.4vh; font-size: 0.75vh; }
-.act-text { font-size: 1vh; }
-.act-owner { font-size: 0.8vh; }
+  .tv-layout { display: grid; grid-template-rows: auto 1fr auto; gap: 1.4vh; padding: 0 2.2vw; height: calc(100% - 10vh); }
+  .tv-top { display: grid; grid-template-columns: 1.1fr 1.3fr 1fr; gap: 1.4vw; min-height: 0; overflow: hidden; }
+  .tv-top > div { display: flex; flex-direction: column; min-height: 0; overflow: hidden; }
+  .tv-mid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4vw; min-height: 0; overflow: hidden; }
+  .tv-mid > div { display: flex; flex-direction: column; min-height: 0; overflow: hidden; }
+  .tv-bottom { display: grid; grid-template-columns: 1fr 1.5fr; gap: 1.4vw; min-height: 0; overflow: hidden; }
+  .tv-bottom > div { display: flex; flex-direction: column; min-height: 0; overflow: hidden; }
 
-.nav, .footer { display: none; }
-.tv-clock { position: fixed; top: 1vh; right: 2.2vw; font-size: 1.2vh; color: var(--dim); background: rgba(255,255,255,0.7); padding: 0.2vh 0.8vh; border-radius: 0.8vh; }
+  .kpi-scroll { overflow-x: visible; overflow-y: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 0.8vh; padding: 0; flex: 1; min-height: 0; }
+  .kpi-card { flex: none; min-width: auto; padding: 1.2vh 0.8vh; border-radius: 1vh; }
+  .kpi-card .label { font-size: 1vh; margin-bottom: 0.3vh; }
+  .kpi-card .value { font-size: 2vh; }
+  .kpi-card .sub { font-size: 0.85vh; }
+  .kpi-card .change { font-size: 0.8vh; padding: 0.2vh 0.6vh; margin-top: 0.3vh; }
+
+  .fw-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8vh; padding: 0; flex: 1; min-height: 0; overflow-y: auto; }
+  .fw-card { padding: 1.2vh 0.7vh; border-radius: 1vh; }
+  .fw-icon { width: 3.8vh; height: 3.8vh; font-size: 1.8vh; margin-bottom: 0.5vh; }
+  .fw-name { font-size: 1.2vh; }
+  .fw-data { font-size: 1.5vh; }
+  .fw-label { font-size: 0.9vh; }
+  .fw-detail { font-size: 0.8vh; margin-top: 0.3vh; }
+
+  .product-list, .timeline-list, .team-list, .action-list { overflow-y: auto; flex: 1; min-height: 0; }
+  .prod-card, .tl-card, .team-card, .act-card { margin: 0 0 0.6vh 0; padding: 0.9vh 1.1vh; border-radius: 0.9vh; }
+  .prod-title { font-size: 1.1vh; margin-bottom: 0.4vh; }
+  .prod-metric { font-size: 0.95vh; padding: 0.25vh 0; }
+  .prod-progress { height: 0.4vh; margin-top: 0.3vh; }
+  .tl-name { font-size: 1.1vh; }
+  .tl-tag { font-size: 0.75vh; padding: 0.15vh 0.6vh; }
+  .tl-body { font-size: 0.85vh; }
+  .tl-bottom { font-size: 0.8vh; margin-top: 0.3vh; }
+  .team-name { font-size: 1.1vh; }
+  .team-load { font-size: 0.85vh; padding: 0.15vh 0.7vh; }
+  .team-role { font-size: 0.75vh; padding: 0.15vh 0.6vh; }
+  .act-prio { width: 1.5vh; height: 1.5vh; font-size: 0.75vh; }
+  .act-text { font-size: 0.95vh; }
+  .act-owner { font-size: 0.75vh; }
+
+  .tv-clock { display: block; position: fixed; top: 1.2vh; right: 2.2vw; font-size: 1.3vh; color: var(--dim); background: rgba(255,255,255,0.7); padding: 0.2vh 0.8vh; border-radius: 0.8vh; }
+  .rotate-tip { display: none; }
+}
+
+.tv-clock { display: none; }
 </style>
 </head>
 <body>
@@ -163,39 +164,48 @@ body { padding-bottom: 0; }
   <div class="summary-card" id="summary"></div>
 </div>
 
-<!-- 第一行：核心指标 | 本月重点项目 | 产品进度 -->
-<div class="tv-top">
-  <div>
-    <div class="section-title">📊 核心指标</div>
-    <div class="kpi-scroll" id="kpi-grid"></div>
+<!-- 竖屏：直接显示 H5 结构（TV 覆盖样式会把它变成三栏） -->
+<div class="tv-layout" id="tv-layout">
+  <div class="tv-top">
+    <div>
+      <div class="section-title">📊 核心指标</div>
+      <div class="kpi-scroll" id="kpi-scroll"></div>
+    </div>
+    <div>
+      <div class="section-title">🎯 本月重点项目</div>
+      <div class="fw-grid" id="fw-grid"></div>
+    </div>
+    <div>
+      <div class="section-title">📦 产品进度</div>
+      <div class="product-list" id="product-list"></div>
+    </div>
   </div>
-  <div>
-    <div class="section-title">🎯 本月重点项目</div>
-    <div class="fw-grid" id="fw-grid"></div>
+  <div class="tv-mid">
+    <div>
+      <div class="section-title">📅 活动看板</div>
+      <div class="timeline-list" id="timeline-list"></div>
+    </div>
+    <div>
+      <div class="section-title">👥 团队精力</div>
+      <div class="team-list" id="team-list"></div>
+    </div>
   </div>
-  <div>
-    <div class="section-title">📦 产品进度</div>
-    <div class="product-list" id="product-list"></div>
+  <div class="tv-bottom">
+    <div></div>
+    <div>
+      <div class="section-title">⚡ 行动清单</div>
+      <div class="action-list" id="action-list"></div>
+    </div>
   </div>
 </div>
 
-<!-- 第二行：活动看板 | 团队精力 | 行动清单 -->
-<div class="tv-mid">
-  <div>
-    <div class="section-title">📅 活动看板</div>
-    <div class="timeline-list" id="timeline-list"></div>
-  </div>
-  <div>
-    <div class="section-title">👥 团队精力</div>
-    <div class="team-list" id="team-list"></div>
-  </div>
-</div>
-<div class="tv-bottom">
-  <div></div>
-  <div>
-    <div class="section-title">⚡ 行动清单</div>
-    <div class="action-list" id="action-list"></div>
-  </div>
+<div class="footer">觉醒团队 · 运营仪表盘 | 更新于 <span id="footer-date">--</span></div>
+
+<div class="nav">
+  <a class="nav-item active" href="#"><span class="nicon">📊</span>概览</a>
+  <a class="nav-item" href="#"><span class="nicon">🎯</span>项目</a>
+  <a class="nav-item" href="#"><span class="nicon">👥</span>团队</a>
+  <a class="nav-item" href="#"><span class="nicon">⚡</span>行动</a>
 </div>
 
 <script>
@@ -281,10 +291,10 @@ renderTimeline("timeline-list");
 renderTeam("team-list");
 renderActions("action-list");
 
-document.getElementById("meta-date").textContent = "更新：" + d.updated + (d.week ? " | " + d.week : "");
+document.getElementById("meta-date").textContent = "更新：" + d.updated;
 document.getElementById("footer-date").textContent = d.updated;
 document.getElementById("summary").innerHTML = "<strong>核心诊断：</strong>" + d.summary;
-renderKPI("kpi-grid");
+renderKPI("kpi-scroll");
 renderFlywheel("fw-grid");
 renderProducts("product-list");
 renderTimeline("timeline-list");
