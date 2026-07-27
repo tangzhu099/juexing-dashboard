@@ -93,55 +93,63 @@ body { padding-bottom: 74px; }
 .nav-item .nicon { font-size: 18px; }
 .footer { text-align: center; color: var(--dim); font-size: 11px; padding: 16px 0 8px; }
 
-/* ===== TV 大屏覆盖样式 ===== */
+/* ===== TV 大屏覆盖样式（优化版）===== */
 html, body { height: 100%; overflow: hidden; }
 body { padding-bottom: 0; }
-.header-gradient { padding: 2vh 2.5vw; border-radius: 0; }
-.header-gradient h1 { font-size: 3vh; }
-.header-gradient .date { font-size: 1.5vh; }
-.summary-card { padding: 1.4vh 2vh; font-size: 1.5vh; margin-top: 1.2vh; }
+.header-gradient { padding: 1.6vh 2.5vw; border-radius: 0; }
+.header-gradient h1 { font-size: 2.8vh; }
+.header-gradient .date { font-size: 1.3vh; }
+.summary-card { padding: 1vh 2vh; font-size: 1.3vh; margin-top: 0.8vh; max-height: 6vh; overflow: hidden; }
 .section { padding: 0; }
-.section-title { font-size: 1.6vh; margin-bottom: 1.2vh; }
+.section-title { font-size: 1.4vh; margin-bottom: 0.8vh; }
 
-/* TV 核心布局：上中下三区 */
-.tv-top { padding: 0 2.2vw; display: grid; grid-template-columns: 1fr 1.2fr 0.9fr; gap: 1.5vw; margin: 1.6vh 0; }
-.tv-mid { padding: 0 2.2vw; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5vw; margin-bottom: 1.2vh; }
-.tv-bottom { padding: 0 2.2vw; display: grid; grid-template-columns: 1fr 1.5fr; gap: 1.5vw; }
+/* 三行布局：上(40vh) 中(30vh) 下(剩余) */
+.tv-top { padding: 0 2.2vw; display: grid; grid-template-columns: 1fr 1.2fr 0.9fr; gap: 1.5vw; height: 39vh; overflow: hidden; }
+.tv-top > div { display: flex; flex-direction: column; min-height: 0; overflow: hidden; }
+.tv-mid { padding: 0 2.2vw; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5vw; height: 29vh; overflow: hidden; }
+.tv-mid > div { display: flex; flex-direction: column; min-height: 0; overflow: hidden; }
+.tv-bottom { padding: 0 2.2vw; display: grid; grid-template-columns: 1fr 1.5fr; gap: 1.5vw; flex: 1; min-height: 10vh; overflow: hidden; }
+.tv-bottom > div { display: flex; flex-direction: column; min-height: 0; overflow: hidden; }
 
-/* 重设所有卡片为紧凑 TV 尺寸 */
-.kpi-scroll { overflow-x: visible; display: grid; grid-template-columns: 1fr 1fr; gap: 1vh; padding: 0; }
-.kpi-card { flex: none; min-width: auto; padding: 1.4vh 1vh; border-radius: 1.2vh; }
-.kpi-card .label { font-size: 1.1vh; margin-bottom: 0.5vh; }
-.kpi-card .value { font-size: 2.2vh; }
-.kpi-card .sub { font-size: 0.95vh; }
-.kpi-card .change { font-size: 0.9vh; padding: 0.3vh 0.8vh; }
+/* KPI 2列 */
+.kpi-scroll { overflow-x: visible; overflow-y: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 0.7vh; padding: 0; flex: 1; min-height: 0; }
+.kpi-card { flex: none; min-width: auto; padding: 1.1vh 0.8vh; border-radius: 1vh; }
+.kpi-card .label { font-size: 0.95vh; margin-bottom: 0.3vh; }
+.kpi-card .value { font-size: 2vh; }
+.kpi-card .sub { font-size: 0.85vh; }
+.kpi-card .change { font-size: 0.8vh; padding: 0.2vh 0.6vh; margin-top: 0.3vh; }
 
-.fw-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8vh; padding: 0; }
-.fw-card { padding: 1.3vh 0.8vh; border-radius: 1.2vh; }
-.fw-icon { width: 4vh; height: 4vh; font-size: 2vh; margin-bottom: 0.6vh; }
-.fw-name { font-size: 1.3vh; }
-.fw-data { font-size: 1.6vh; }
-.fw-label { font-size: 1vh; }
-.fw-detail { font-size: 0.9vh; margin-top: 0.4vh; }
+/* 飞轮 3列 */
+.fw-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.7vh; padding: 0; overflow-y: auto; flex: 1; min-height: 0; }
+.fw-card { padding: 1vh 0.7vh; border-radius: 1vh; }
+.fw-icon { width: 3.5vh; height: 3.5vh; font-size: 1.8vh; margin-bottom: 0.4vh; }
+.fw-name { font-size: 1.2vh; }
+.fw-data { font-size: 1.4vh; }
+.fw-label { font-size: 0.9vh; }
+.fw-detail { font-size: 0.8vh; margin-top: 0.3vh; }
 
-.product-list, .timeline-list, .team-list, .action-list { overflow: auto; }
-.prod-card, .tl-card, .team-card, .act-card { margin: 0 0 0.7vh 0; padding: 1vh 1.2vh; border-radius: 1vh; }
-.prod-title { font-size: 1.2vh; margin-bottom: 0.5vh; }
-.prod-metric { font-size: 1vh; padding: 0.3vh 0; }
-.prod-progress { height: 0.4vh; margin-top: 0.4vh; }
-.tl-name { font-size: 1.2vh; }
-.tl-tag { font-size: 0.85vh; padding: 0.2vh 0.7vh; }
-.tl-body { font-size: 1vh; }
-.tl-bottom { font-size: 0.9vh; margin-top: 0.5vh; }
-.team-name { font-size: 1.2vh; }
-.team-load { font-size: 0.95vh; padding: 0.2vh 0.8vh; }
-.team-role { font-size: 0.85vh; padding: 0.2vh 0.7vh; }
-.act-prio { width: 1.6vh; height: 1.6vh; font-size: 0.85vh; }
-.act-text { font-size: 1.1vh; }
-.act-owner { font-size: 0.85vh; }
+/* 所有滚动列表 */
+.product-list, .timeline-list, .team-list, .action-list { overflow-y: auto; flex: 1; min-height: 0; }
+.prod-card, .tl-card, .team-card, .act-card { margin: 0 0 0.5vh 0; padding: 0.8vh 1vh; border-radius: 0.8vh; }
+.prod-title { font-size: 1.1vh; margin-bottom: 0.3vh; }
+.prod-metric { font-size: 0.9vh; padding: 0.2vh 0; }
+.prod-progress { height: 0.35vh; margin-top: 0.3vh; }
+.tl-name { font-size: 1.1vh; }
+.tl-tag { font-size: 0.75vh; padding: 0.15vh 0.6vh; }
+.tl-body { font-size: 0.9vh; }
+.tl-bottom { font-size: 0.8vh; margin-top: 0.3vh; }
+.tl-card { padding: 0.8vh 1vh; }
+.tl-top { margin-bottom: 0.2vh; }
+.team-head { margin-bottom: 0.3vh; }
+.team-name { font-size: 1.1vh; }
+.team-load { font-size: 0.85vh; padding: 0.15vh 0.7vh; }
+.team-role { font-size: 0.75vh; padding: 0.15vh 0.6vh; }
+.act-prio { width: 1.4vh; height: 1.4vh; font-size: 0.75vh; }
+.act-text { font-size: 1vh; }
+.act-owner { font-size: 0.8vh; }
 
 .nav, .footer { display: none; }
-.tv-clock { position: fixed; top: 1.2vh; right: 2.2vw; font-size: 1.4vh; color: var(--dim); background: rgba(255,255,255,0.7); padding: 0.3vh 1vh; border-radius: 1vh; }
+.tv-clock { position: fixed; top: 1vh; right: 2.2vw; font-size: 1.2vh; color: var(--dim); background: rgba(255,255,255,0.7); padding: 0.2vh 0.8vh; border-radius: 0.8vh; }
 </style>
 </head>
 <body>
