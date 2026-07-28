@@ -107,28 +107,24 @@ body { padding-bottom: 74px; }
 
   .nav, .footer { display: none; }
 
-  .tv-layout { display: grid; grid-template-rows: auto 1fr auto; gap: 1.4vh; padding: 0 2.2vw; height: calc(100% - 10vh); }
-  .tv-top { display: grid; grid-template-columns: 1.1fr 1.3fr 1fr; gap: 1.4vw; min-height: 0; overflow: hidden; }
-  .tv-top > div { display: flex; flex-direction: column; min-height: 0; overflow: hidden; }
-  .tv-mid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4vw; min-height: 0; overflow: hidden; }
-  .tv-mid > div { display: flex; flex-direction: column; min-height: 0; overflow: hidden; }
-  .tv-bottom { display: grid; grid-template-columns: 1fr 1.5fr; gap: 1.4vw; min-height: 0; overflow: hidden; }
-  .tv-bottom > div { display: flex; flex-direction: column; min-height: 0; overflow: hidden; }
+  .tv-layout { display: grid; grid-template-columns: 0.9fr 1.5fr 1.1fr; gap: 1.4vw; padding: 0 2.2vw; height: calc(100% - 10vh); }
+  .tv-layout > .tv-col { display: flex; flex-direction: column; gap: 1.4vh; min-height: 0; overflow: hidden; }
+  .tv-col > div { display: flex; flex-direction: column; min-height: 0; overflow: hidden; }
 
   .kpi-scroll { overflow-x: visible; overflow-y: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 0.8vh; padding: 0; flex: 1; min-height: 0; }
-  .kpi-card { flex: none; min-width: auto; padding: 1.2vh 0.8vh; border-radius: 1vh; }
+  .kpi-card { flex: none; min-width: auto; padding: 1vh 0.7vh; border-radius: 1vh; }
   .kpi-card .label { font-size: 1vh; margin-bottom: 0.3vh; }
-  .kpi-card .value { font-size: 2vh; }
-  .kpi-card .sub { font-size: 0.85vh; }
-  .kpi-card .change { font-size: 0.8vh; padding: 0.2vh 0.6vh; margin-top: 0.3vh; }
+  .kpi-card .value { font-size: 1.8vh; }
+  .kpi-card .sub { font-size: 0.8vh; }
+  .kpi-card .change { font-size: 0.75vh; padding: 0.2vh 0.5vh; margin-top: 0.3vh; }
 
   .fw-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8vh; padding: 0; flex: 1; min-height: 0; overflow-y: auto; }
-  .fw-card { padding: 1.2vh 0.7vh; border-radius: 1vh; }
-  .fw-icon { width: 3.8vh; height: 3.8vh; font-size: 1.8vh; margin-bottom: 0.5vh; }
-  .fw-name { font-size: 1.2vh; }
-  .fw-data { font-size: 1.5vh; }
-  .fw-label { font-size: 0.9vh; }
-  .fw-detail { font-size: 0.8vh; margin-top: 0.3vh; }
+  .fw-card { padding: 1vh 0.6vh; border-radius: 1vh; }
+  .fw-icon { width: 3.2vh; height: 3.2vh; font-size: 1.6vh; margin-bottom: 0.4vh; }
+  .fw-name { font-size: 1.1vh; }
+  .fw-data { font-size: 1.4vh; }
+  .fw-label { font-size: 0.85vh; }
+  .fw-detail { font-size: 0.75vh; margin-top: 0.3vh; }
 
   .product-list, .timeline-list, .team-list, .action-list { overflow-y: auto; flex: 1; min-height: 0; }
   .prod-card, .tl-card, .team-card, .act-card { margin: 0 0 0.6vh 0; padding: 0.9vh 1.1vh; border-radius: 0.9vh; }
@@ -166,33 +162,32 @@ body { padding-bottom: 74px; }
 
 <!-- 竖屏：直接显示 H5 结构（TV 覆盖样式会把它变成三栏） -->
 <div class="tv-layout" id="tv-layout">
-  <div class="tv-top">
-    <div>
+  <div class="tv-col tv-col-left">
+    <div class="tv-panel" style="flex: 0 0 auto; max-height: 42%;">
       <div class="section-title">📊 核心指标</div>
       <div class="kpi-scroll" id="kpi-scroll"></div>
     </div>
-    <div>
-      <div class="section-title">🎯 本月重点项目</div>
-      <div class="fw-grid" id="fw-grid"></div>
-    </div>
-    <div>
-      <div class="section-title">📦 产品进度</div>
-      <div class="product-list" id="product-list"></div>
-    </div>
-  </div>
-  <div class="tv-mid">
-    <div>
-      <div class="section-title">📅 活动看板</div>
-      <div class="timeline-list" id="timeline-list"></div>
-    </div>
-    <div>
+    <div class="tv-panel" style="flex: 1; min-height: 0;">
       <div class="section-title">👥 团队精力</div>
       <div class="team-list" id="team-list"></div>
     </div>
   </div>
-  <div class="tv-bottom">
-    <div></div>
-    <div>
+  <div class="tv-col tv-col-center">
+    <div class="tv-panel" style="flex: 0 0 auto; max-height: 45%;">
+      <div class="section-title">🎯 本月重点项目</div>
+      <div class="fw-grid" id="fw-grid"></div>
+    </div>
+    <div class="tv-panel" style="flex: 1; min-height: 0;">
+      <div class="section-title">📅 活动看板</div>
+      <div class="timeline-list" id="timeline-list"></div>
+    </div>
+  </div>
+  <div class="tv-col tv-col-right">
+    <div class="tv-panel" style="flex: 0 0 auto; max-height: 55%;">
+      <div class="section-title">📦 产品进度</div>
+      <div class="product-list" id="product-list"></div>
+    </div>
+    <div class="tv-panel" style="flex: 1; min-height: 0;">
       <div class="section-title">⚡ 行动清单</div>
       <div class="action-list" id="action-list"></div>
     </div>
@@ -280,16 +275,6 @@ function renderActions(containerId){
     el.appendChild(div);
   });
 }
-
-document.getElementById("meta-date").textContent = "更新：" + d.updated;
-document.getElementById("footer-date").textContent = d.updated;
-document.getElementById("summary").innerHTML = "<strong>核心诊断：</strong>" + d.summary;
-renderKPI("kpi-scroll");
-renderFlywheel("fw-grid");
-renderProducts("product-list");
-renderTimeline("timeline-list");
-renderTeam("team-list");
-renderActions("action-list");
 
 document.getElementById("meta-date").textContent = "更新：" + d.updated;
 document.getElementById("footer-date").textContent = d.updated;
