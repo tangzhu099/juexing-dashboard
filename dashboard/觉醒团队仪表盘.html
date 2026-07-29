@@ -33,6 +33,21 @@
   .kpi.ok { border-color: var(--ok); background: var(--ok-bg); }
   .kpi.info { border-color: var(--info); background: var(--info-bg); }
   .kpi.accent { border-color: var(--accent); background: var(--accent-bg); }
+  .revenue-card { background: linear-gradient(135deg,#3a6b35,#5a8a4f); border-radius: 16px; padding: 22px 26px; margin-bottom: 20px; color: #fff; box-shadow: 0 4px 20px rgba(58,107,53,0.2); }
+  .revenue-top { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 14px; }
+  .revenue-label { font-size: 13px; opacity: 0.9; }
+  .revenue-main { font-size: 38px; font-weight: 800; line-height: 1; }
+  .revenue-main small { font-size: 16px; font-weight: 600; opacity: 0.85; }
+  .revenue-target { font-size: 13px; opacity: 0.9; text-align: right; }
+  .revenue-target b { font-size: 18px; }
+  .revenue-bar { height: 12px; background: rgba(255,255,255,0.25); border-radius: 6px; overflow: hidden; margin: 14px 0; }
+  .revenue-bar > div { height: 100%; background: #fff; border-radius: 6px; transition: width 0.6s; }
+  .revenue-split { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 6px; }
+  .rev-item { background: rgba(255,255,255,0.15); border-radius: 10px; padding: 10px 12px; }
+  .rev-item .n { font-size: 11px; opacity: 0.85; }
+  .rev-item .v { font-size: 18px; font-weight: 700; margin-top: 2px; }
+  .revenue-gap { font-size: 12px; opacity: 0.9; margin-top: 10px; }
+  @media (max-width: 768px) { .revenue-split { grid-template-columns: repeat(2, 1fr); } .revenue-main { font-size: 30px; } }
   .alert { display: flex; align-items: center; gap: 12px; padding: 12px 18px; border-radius: 10px; margin-bottom: 20px; font-size: 13px; line-height: 1.6; }
   .alert.info { background: var(--info-bg); border: 1px solid var(--info); }
   .alert .alert-icon { font-size: 20px; flex-shrink: 0; }
@@ -117,6 +132,7 @@
   </div>
 </div>
 <div class="kpi-bar" id="kpi-bar"></div>
+<div class="revenue-card" id="revenue-card"></div>
 <div class="alert info">
   <div class="alert-icon">📊</div>
   <div id="alert-text"></div>
@@ -176,6 +192,21 @@ var d = JSON.parse(b64DecodeUtf8(B64));
     div.innerHTML = '<div class="kpi-label">' + k.label + '</div><div class="kpi-value">' + k.value + '</div><div class="kpi-sub">' + k.sub + '</div><div class="kpi-change" style="color:' + (COLORS[k.color]||'#94a3b8') + '">' + (k.change||'') + '</div>';
     kpiEl.appendChild(div);
   });
+
+  if (d.revenue) {
+    var r = d.revenue;
+    var split = (r.breakdown || []).map(function(b) {
+      return '<div class="rev-item"><div class="n">' + b.name + '</div><div class="v">' + b.value + '</div></div>';
+    }).join('');
+    document.getElementById('revenue-card').innerHTML =
+      '<div class="revenue-top">' +
+        '<div><div class="revenue-label">💰 本月总营收</div><div class="revenue-main">' + r.current + ' <small>/ ' + r.target + '</small></div></div>' +
+        '<div class="revenue-target">完成度<br><b>' + r.percent + '%</b></div>' +
+      '</div>' +
+      '<div class="revenue-bar"><div style="width:' + r.percent + '%"></div></div>' +
+      '<div class="revenue-split">' + split + '</div>' +
+      '<div class="revenue-gap">📌 剩余缺口：' + (r.gap || '—') + '（目标 ' + r.target + '）</div>';
+  }
 
   var fw = document.getElementById('flywheel');
   var nodes = d.flywheel;
